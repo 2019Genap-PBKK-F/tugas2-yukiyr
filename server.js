@@ -13,37 +13,37 @@ const config = {
 };
 
 var executeQuery = function(res, query) {
-  sql.connect(config, function(err){
-    if(err) {
-      res.end('Connection Error\n' + err)
-    }
-    else {
-      var request = new sql.Request()
-      request.query(query, function(err, response){
+    sql.connect(config, function(err){
         if(err) {
-          console.log('Query Error\n' + err)
+            res.end('Connection Error\n' + err)
         }
-        else{
-          res.send(response.recordset)
+        else {
+            var request = new sql.Request()
+            request.query(query, function(err, response){
+                if(err) {
+                    console.log('Query Error\n' + err)
+                }
+                else{
+                    res.send(response.recordset)
+                }
+            })
         }
-     })
-    }
-  })
+    })
 }
 
 app.get("/",function(req, res)
 {
-  res.end('Hello World');
+    res.end('Hello World');
 });
 
 app.get("/api/mahasiswa", function(req, res)
 {
-  var query = "Select * from Mahasiswa";
-  var cek = 0;
-  var parameters;
-  executeQuery(res,query,cek,parameters);
+    var query = "Select * from Mahasiswa";
+    var cek = 0;
+    var parameters;
+    executeQuery(res,query,cek,parameters);
 });
 
 app.listen(port, function () {
-  console.log('Server is running..');
+    console.log('Server is running..');
 });
