@@ -38,8 +38,10 @@ app.get("/",function(req, res)
 
 app.get("/api/mahasiswa", function(req, res)
 {
-  var query = "select * from mahasiswa";
-  executeQuery(res, query);
+  var query = "Select * from Mahasiswa";
+  var cek = 0;
+  var parameters;
+  executeQuery(res,query,cek,parameters);
 });
 
 app.listen(port, function () {
