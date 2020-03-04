@@ -31,17 +31,10 @@ var executeQuery = function(res, query) {
     })
 }
 
-app.get("/",function(req, res)
-{
-    res.end('Hello World');
-});
-
-app.get("/api/mahasiswa", function(req, res)
+app.get("/", function(req, res)
 {
     var query = "Select * from Mahasiswa";
-    var cek = 0;
-    var parameters;
-    executeQuery(res,query,cek,parameters);
+    executeQuery(res, query);
 });
 
 app.listen(port, function () {
