@@ -49,10 +49,10 @@ var executeQuery = function(res, query, param, reqType) {
   })
 }
 
-/*app.get("/",function(req, res)
+app.get("/",function(req, res)
 {
   res.end('Hello World');
-});*/
+});
 
 app.get("/api/Mahasiswa", function(req, res)
 {
