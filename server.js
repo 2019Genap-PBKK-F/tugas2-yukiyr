@@ -191,20 +191,26 @@ app.post("/api/JenisSatker", function(req, res)
 {
   var param = [
     { name: 'id', sqltype: sql.Int, value: req.body.id },
-    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'create_date', sqltype: sql.Char, value: req.body.create_date },
+    { name: 'last_update', sqltype: sql.Char, value: req.body.last_update },
+    { name: 'expired_date', sqltype: sql.Char, value: req.body.expired_date }
   ]
 
-  var query = 'insert into JenisSatker ( id, nama ) values( @id, @nama)';
+  var query = 'insert into JenisSatker ( id, nama, create_date, last_update, expired_date ) values( @id, @nama, @create_date, @last_update, @expired_date)';
   executeQuery(res, query, param, 1)
 })
 
 app.put('/api/JenisSatker/:id',function(req,res){
   var param = [
     { name: 'id', sqltype: sql.Int, value: req.body.id },
-    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'create_date', sqltype: sql.Char, value: req.body.create_date },
+    { name: 'last_update', sqltype: sql.Char, value: req.body.last_update },
+    { name: 'expired_date', sqltype: sql.Char, value: req.body.expired_date }
   ]
 
-  var query = "update JenisSatker set nama = @nama WHERE id =" + req.params.id;
+  var query = "update JenisSatker set nama = @nama, create_date = @create_date, last_update = @last_update, expired_date = @expired_date WHERE id =" + req.params.id;
   executeQuery(res,query, param, 1);
 });
 
@@ -226,12 +232,16 @@ app.post("/api/SatuanKerja", function(req, res)
   var param = [
     { name: 'id', sqltype: sql.VarChar, value: req.body.id },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'email', sqltype: sql.VarChar, value: req.body.email },
     { name: 'level_unit', sqltype: sql.Int, value: req.body.level_unit },
     { name: 'id_induk_satker', sqltype: sql.VarChar, value: req.body.id_induk_satker },
-    { name: 'id_jns_satker', sqltype: sql.Int, value: req.body.id_jns_satker }
+    { name: 'id_jns_satker', sqltype: sql.Int, value: req.body.id_jns_satker },
+    { name: 'create_date', sqltype: sql.Char, value: req.body.create_date },
+    { name: 'last_update', sqltype: sql.Char, value: req.body.last_update },
+    { name: 'expired_date', sqltype: sql.Char, value: req.body.expired_date }
   ]
 
-  var query = 'insert into SatuanKerja ( id, nama, level_unit, id_induk_satker, id_jns_satker ) values( @id, @nama, @level_induk, @id_induk_satker, @id_jns_satker )';
+  var query = 'insert into SatuanKerja ( id, nama, email, level_unit, id_induk_satker, id_jns_satker, create_date, last_update, expired_date ) values( @id, @nama, @email, @level_induk, @id_induk_satker, @id_jns_satker, @create_date, @last_update, @expired_date )';
   executeQuery(res, query, param, 1)
 })
 
@@ -239,12 +249,16 @@ app.put('/api/SatuanKerja/:id',function(req,res){
   var param = [
     { name: 'id', sqltype: sql.VarChar, value: req.body.id },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'email', sqltype: sql.VarChar, value: req.body.email },
     { name: 'level_unit', sqltype: sql.Int, value: req.body.level_unit },
     { name: 'id_induk_satker', sqltype: sql.VarChar, value: req.body.id_induk_satker },
-    { name: 'id_jns_satker', sqltype: sql.Int, value: req.body.id_jns_satker }
+    { name: 'id_jns_satker', sqltype: sql.Int, value: req.body.id_jns_satker },
+    { name: 'create_date', sqltype: sql.Char, value: req.body.create_date },
+    { name: 'last_update', sqltype: sql.Char, value: req.body.last_update },
+    { name: 'expired_date', sqltype: sql.Char, value: req.body.expired_date }
   ]
 
-  var query = "update SatuanKerja set nama = @nama, level_unit = @level_unit, id_induk_satker = @id_induk_satker, id_jns_satker = @id_jns_satker WHERE id ='" + req.params.id + "'";
+  var query = "update SatuanKerja set nama = @nama, email = @email, level_unit = @level_unit, id_induk_satker = @id_induk_satker, id_jns_satker = @id_jns_satker, create_date = @create_date, last_update = @last_update, expired_date = @expired_date WHERE id ='" + req.params.id + "'";
   executeQuery(res,query, param, 1);
 });
 
