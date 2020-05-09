@@ -54,6 +54,34 @@ app.get("/",function(req, res)
   res.end('Hello World');
 });
 
+// Dosen
+app.get("/api/Dosen", function(req, res)
+{
+  var query = "select * from Dosen";
+  executeQuery(res, query, null, 0);
+});
+
+// Penelitian
+app.get("/api/Penelitian", function(req, res)
+{
+  var query = "select * from Penelitian";
+  executeQuery(res, query, null, 0);
+});
+
+// Abmas
+app.get("/api/Abmas", function(req, res)
+{
+  var query = "select * from Abmas";
+  executeQuery(res, query, null, 0);
+});
+
+// Publikasi
+app.get("/api/Publikasi", function(req, res)
+{
+  var query = "select * from Publikasi";
+  executeQuery(res, query, null, 0);
+});
+
 // Data Dasar
 app.get("/api/DataDasar", function(req, res)
 {
