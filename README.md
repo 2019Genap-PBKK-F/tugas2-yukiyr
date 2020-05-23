@@ -21,3 +21,11 @@ Alamat api
 9. http://10.199.14.46:8005/api/Indikator_SatuanKerja
 
 10. http://10.199.14.46:8005/api/Indikator_SatuanKerja_Log
+
+11. http://10.199.14.46:8005/api/Abmas
+
+12. http://10.199.14.46:8005/api/Dosen
+
+13. http://10.199.14.46:8005/api/Penelitian
+
+14. http://10.199.14.46:8005/api/Publikasi
