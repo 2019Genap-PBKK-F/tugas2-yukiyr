@@ -450,9 +450,9 @@ app.post("/api/Indikator_SatuanKerja", function(req, res)
   var param = [
     { name: 'id_indikator_periode', sqltype: sql.Int, value: req.body.id_indikator_periode },
     { name: 'id_satker', sqltype: sql.VarChar, value: req.body.id_satker },
-    { name: 'bobot', sqltype: sql.Float, value: req.body.bobot },
-    { name: 'target', sqltype: sql.Float, value: req.body.target },
-    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian },
+    { name: 'bobot', sqltype: sql.Float, value: req.body.bob },
+    { name: 'target', sqltype: sql.Float, value: req.body.targ },
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capai },
     { name: 'last_update', sqltype: sql.VarChar, value: req.body.last_update },
     { name: 'id', sqltype: sql.Int, value: req.body.id },
     { name: 'persentase', value: req.body.persentase }
